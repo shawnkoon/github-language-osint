@@ -28,26 +28,26 @@ def run():
     total = 0
 
     for repo in repos:
-        for lang, lines in repo.get_languages().items():
+        for lang, bytes in repo.get_languages().items():
             if lang in breakdown:
-                breakdown[lang] += lines
+                breakdown[lang] += bytes
             else:
-                breakdown[lang] = lines
-            total += lines
+                breakdown[lang] = bytes
+            total += bytes
     
     print(f"Name of the Target  : {target}")
-    print(f"Total repos scanned : {repos.totalCount}")
-    print(f"Total lines found   : {total}")
+    print(f"Total Repos Scanned : {repos.totalCount}")
+    print(f"Total Bytes Found   : {total}")
 
-    res = PrettyTable(field_names=["Programming Language", "# of Lines", "% Utilization"])
+    res = PrettyTable(field_names=["Programming Language", "# of Bytes", "% Utilization"])
     
-    for lang, lines in breakdown.items():
-        res.add_row([lang, lines, f"{round((lines/total)*100,3)} %"])
+    for lang, bytes in breakdown.items():
+        res.add_row([lang, bytes, f"{round((bytes/total)*100,3)} %"])
     
-    res.sortby = "# of Lines"
+    res.sortby = "# of Bytes"
     res.reversesort = True
     res.align["Programming Language"] = 'l'
-    res.align["# of Lines"] = 'r'
+    res.align["# of Bytes"] = 'r'
     res.align["% Utilization"] = 'r'
 
     print(res)

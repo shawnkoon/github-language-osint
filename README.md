@@ -22,10 +22,10 @@ Enter name of the target user/org
 Scanning...
 
 Name of the Target  : octocat
-Total repos scanned : 8
-Total lines found   : 225111
+Total Repos Scanned : 8
+Total Bytes Found   : 225111
 +----------------------+------------+---------------+
-| Programming Language | # of Lines | % Utilization |
+| Programming Language | # of Bytes | % Utilization |
 +----------------------+------------+---------------+
 | Ruby                 |     204865 |      91.006 % |
 | CSS                  |      14950 |       6.641 % |
